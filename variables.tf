@@ -1,27 +1,26 @@
-variable "atlas" {
-  description = "(Required) Details about this Atlas environment"
-  type        = "map"
-
-  default = {
-    org                    = "Nutrien"
-    env                    = "default-env"
-    aws_region             = "us-east-2"
-    aws_replication_region = "us-west-1"
-  }
+variable "name" {
+  default = "RKE-Test-cluster"
 }
 
-variable "aws" {
-  description = "(Required) Details about this AWS account"
-  type        = "map"
-
-  default = {
-    # IAM credentials for the account, optional if the env vars
-    # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are present
-    account_id = ""
-
-    region     = ""
-    access_key = ""
-    secret_key = ""
-    kms_key    = ""
-  }
+variable "private_subnets" {
+  default = ["10.3.0.0/20", "10.3.16.0/20", "10.3.32.0/20"]
 }
+
+variable "public_subnets" {
+  default = ["10.3.128.0/23", "10.3.130.0/23", "10.3.132.0/23"]
+}
+
+variable "cidr" {
+  default = "10.3.0.0/16"
+}
+
+variable "azs" {
+  default = ["eu-north-1"]
+}
+
+variable "environment" {
+  type        = string
+  description = "Environment name"
+  default = "RKE-HA-CLUSTER"
+}
+
