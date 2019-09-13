@@ -13,10 +13,10 @@ module "vpc" {
   enable_nat_gateway     = true
   single_nat_gateway     = true
   one_nat_gateway_per_az = false
-
+  instance_tenancy = "default"
   enable_dns_hostnames = true
   enable_dns_support   = true
-
+  create_database_subnet_group = false
   enable_s3_endpoint = true
 
   public_subnet_tags = {

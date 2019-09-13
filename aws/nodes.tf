@@ -28,9 +28,9 @@ resource "aws_security_group" "allow-all" {
 
 resource "aws_instance" "rke-node" {
   count = 4
-  subnet_id = module.vpc.public_subnets[0]
+  subnet_id = module.vpc.private_subnets[0]
 
-  ami                    = "ami-06b546f9b0e127859"
+  ami                    = "ami-25048f5b"
   instance_type          = var.instance_type
   key_name               = aws_key_pair.rke-node-key.id
   iam_instance_profile   = aws_iam_instance_profile.rke-aws.name
