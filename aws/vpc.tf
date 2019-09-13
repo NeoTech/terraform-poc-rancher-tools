@@ -5,7 +5,6 @@ module "vpc" {
   name = var.name
   cidr = var.cidr
 
-  # TODO: compute subnets automatically from CIDR based on number of available AZs
   azs = var.azs
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets

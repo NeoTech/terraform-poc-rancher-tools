@@ -1,9 +1,11 @@
 variable "region" {
   default = "eu-north-1"
 }
-
+variable "ami_id" {
+  default = "ami-dbc04aa5"
+}
 variable "instance_type" {
-  default = "t2.small"
+  default = "t3.small"
 }
 
 variable "cluster_id" {
