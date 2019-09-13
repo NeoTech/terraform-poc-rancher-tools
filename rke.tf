@@ -1,7 +1,5 @@
 module "nodes" {
   source = "./aws"
-  region        = "us-east-2"
-  instance_type = "t2.small"
   cluster_id    = "nutrien-poc-rke"
 }
 
