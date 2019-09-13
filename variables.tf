@@ -15,7 +15,7 @@ variable "cidr" {
 }
 
 variable "azs" {
-  default = ["eu-north-1"]
+  default = ["eu-north-1c", "eu-north-1b", "eu-north-1a"]
 }
 
 variable "environment" {
